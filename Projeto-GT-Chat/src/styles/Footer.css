@@ -1,3 +1,12 @@
+:root {
+  --color1: #181bc9;
+  --color2: #1b3e76;
+  --color3: #fff;
+  --color4: #000;
+  --color5: #7274F2;
+  --color6: #BF0067;
+}
+
 footer {
     background-color: var(--color2);
     padding: 40px 20px;
