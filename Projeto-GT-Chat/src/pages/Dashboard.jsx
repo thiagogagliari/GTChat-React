@@ -1,46 +1,54 @@
+import React from 'react';
+import '../styles/Dashboard.css';
+import LogoSemFundo from '../assets/logo-sem-fundo.png';
+import FrontEndImage from '../assets/frontend.jpg';
+import BackEndImage from '../assets/backend.jpg';
+import ProjectImage from '../assets/projects.jpg';
+import { LogOut } from 'lucide-react';
+
 export default function Dashboard(){
     return (
         <>
     <header id="cabecalho">
-      <img src="./assets/logo-sem-fundo.png" width="50pz" alt="" />
+      <img src={LogoSemFundo} alt="" />
       <h1>Salas Disponíveis</h1>
-      <a href="./login.html"><i class="bi bi-box-arrow-left"></i></a>
+      <a href="./login.html"> <LogOut /></a>
     </header>
 
-    <div class="container">
-      <div class="card">
+    <div className="container">
+      <div className="card">
         <h2>Salas Frontend</h2>
-        <img src="./assets/frontend.jpg" alt="" />
+        <img src={FrontEndImage} alt="" />
         <p>Membros Online:</p>
-        <i class="bi bi-people-fill">
+        <i className="bi bi-people-fill">
           <p>3 Pessoas</p>
         </i>
         <a href="sala-front.html">
-          <button class="btn-salas">Entrar</button>
+          <button className="btn-salas">Entrar</button>
         </a>
       </div>
 
-      <div class="card">
+      <div className="card">
         <h2>Sala Backend</h2>
-        <img src="/assets/backend.jpg" alt="" />
+          <img src={BackEndImage} alt="" />
         <p>Membros Online:</p>
-        <i class="bi bi-people-fill">
+        <i className="bi bi-people-fill">
           <p>0 Pessoas</p>
         </i>
         <a href="salas.html">
-          <button class="btn-salas">Entrar</button>
+          <button className="btn-salas">Entrar</button>
         </a>
       </div>
 
-      <div class="card">
+      <div className="card">
         <h2>Salas Projetos</h2>
-        <img src="/assets/projects.jpg" alt="" />
+        <img src={ProjectImage} alt="" />
         <p>Membros Online:</p>
-        <i class="bi bi-people-fill">
+        <i className="bi bi-people-fill">
           <p>0 Pessoas</p>
         </i>
         <a href="salas.html">
-          <button class="btn-salas">Entrar</button>
+          <button className="btn-salas">Entrar</button>
         </a>
       </div>
     </div>
