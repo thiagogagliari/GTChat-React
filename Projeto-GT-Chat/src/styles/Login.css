@@ -16,12 +16,18 @@
     background-size: contain;
     background-position: center;
     font-family: 'Roboto', sans-serif;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; */
+  } 
+  
+  #bodyLogin{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  } 
-  
+  }
   html{
     overflow-x: hidden;
   }
@@ -109,6 +115,7 @@
     color: var(--color3);
   }
   .login-criar-conta a{
+    margin-left: 8px;
     font-size: 20px;
     text-align: center;
     color: var(--color7);
@@ -116,8 +123,10 @@
   }
   
   .login-criar-conta a:hover{
-    color: var(--color8);
+    color: var(--color6);
     transition: 1.2s;
+    margin-left: 10px;
+    font-weight: bold;
   }
   
   .login-password-container {
@@ -155,9 +164,9 @@
   }
   
   .login-input-error {
-    border: 3px solid var(--error) !important;
-    background-color: #fff0f0 !important;
-  }
+    font-size: 20px;
+    margin-top: 20px;
+    color: red;  }
   
   .login-input-error::placeholder {
     color: var(--error);
