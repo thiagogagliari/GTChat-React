@@ -3,6 +3,13 @@ import React, { useState } from 'react'
 import LogoSemFundo from '../assets/logo-sem-fundo.png'
 
 export default function Login() {
+
+  // Alterna o tipo do input entre password e text
+  const [typeSenha, setSenha] = useState(false)
+  
+  function mudarTipo() {
+    setSenha(!typeSenha)
+  }
   const [errorMessage, setErrorMessage] = useState(false);
 
   function acessar() {
@@ -21,10 +28,10 @@ export default function Login() {
   }
 
   return (
-    <div id='bodyLogin'>
-      <div className="login-container">
-        <img src={LogoSemFundo} alt="" className="login-logo" />
-        <h2 className='login-texto'>Acesse sua conta</h2>
+    <div id='login-body'>
+        <div className="login-container">
+      <img src={LogoSemFundo} alt="" className="login-logo" />
+      <h2 className='login-texto'>Acesse sua conta</h2>
 
         <form action="loginForm">
           <div className="login-grupo-inputs">
@@ -44,13 +51,13 @@ export default function Login() {
             <div className="login-password-container">
               <input
                 className='login-input'
-                type="password"
+                type={typeSenha ? 'text' : 'password'}
                 id="password"
                 name="password"
                 placeholder="Digite sua senha"
                 required
               />
-              <i className="fas fa-eye" id="togglePassword"></i>
+              <i className={typeSenha ? 'fas fa-eye-slash' : 'fas fa-eye'} id="togglePassword" onClick={mudarTipo}></i>
             </div>
             {errorMessage && <p className="login-input-error">Email ou senha inválidos.</p>}
           </div>

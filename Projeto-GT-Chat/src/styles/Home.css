@@ -12,49 +12,45 @@
     padding: 0;
     box-sizing: border-box;
   }
+
   
   /* Container padrão */
   .home-container {
-    width: 100vw;
+    width: 90%;
     max-width: 1200px;
+    margin: 0 auto;
   }
   
  
-  #home-header{
-    height: 100px;
-    width: 100vw;
+  .home-header{ 
     background-color:var(--color2);
     padding: 20px 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
   }
   
-  .home-header-container {
-    background-color: red;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-  }
-  
-  #logo{
-    width: 10px;
+  #home-logo{
+    height: 60px;
   }
   
   /* Botões */
   .home-nav-buttons{
     margin-left: 15px;
+    width: 250px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .home-nav-buttons > button {
     padding: 10px 20px;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
-  
+
   .home-btn-outline {
     background-color: transparent;
     border: 2px solid var(--color3);
@@ -75,24 +71,29 @@
   .home-btn-fill:hover {
     background-color: #d9e6ff;
   }
+
+  .home-main{
+  padding: 40px 0;
+  background-color: #f4f8ff;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   
- 
-  main {
-    padding: 60px 0;
-    background-color: #f4f8ff;
-  }
+}
   
   .home-main-content {
+    margin: 0 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
     gap: 40px;
+    align-items: center;
   }
   
   .home-text-area {
-    flex: 1;
-    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    max-width: 600px;
   }
   
   .home-text-area h1 {
@@ -111,13 +112,13 @@
     color: #333333;
   }
   
-  .home-image-area {
+  /* .home-image-area {
     flex: 1;
     min-width: 500px;
     display: flex;
     justify-content: center;
   }
-  
+   */
   .home-image-area img {
     max-width: 100%;
     height: auto;

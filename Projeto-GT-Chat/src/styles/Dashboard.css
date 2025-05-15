@@ -18,16 +18,7 @@
   margin: 20px;
   border-radius: 10%;
 
-}
-html{
-  overflow-x: hidden;
-}
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  }
 
 .dashboard-texto{
   background-color: var(--color2);
