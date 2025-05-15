@@ -16,7 +16,7 @@ export default function Login() {
     window.location.href = '/dashboard'
   }
   return (
-    <>
+    <div id='login-body'>
         <div className="login-container">
       <img src={LogoSemFundo} alt="" className="login-logo" />
       <h2 className='login-texto'>Acesse sua conta</h2>
@@ -63,6 +63,6 @@ export default function Login() {
         </div>
       </form>
     </div>
-    </>
+    </div>
   )
 }

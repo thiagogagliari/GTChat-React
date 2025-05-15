@@ -34,9 +34,8 @@ export default function Home(){
                 <img src={ChatImagemFundo} alt="Imagem do chat" />
               </div>
             </div>
-          </main>
 
-        
+          </main>
           <section className="home-features">
             <div className="home-container">
               <h2>Por que usar o GTChat?</h2>
@@ -56,6 +55,8 @@ export default function Home(){
               </div>
             </div>
           </section>
+
+        
           <Footer/>
       </>
     )

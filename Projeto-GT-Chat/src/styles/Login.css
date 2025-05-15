@@ -10,26 +10,12 @@
     --error: #b80a0a;
   }
   
-  body{
-    background-image: url(../assets/background.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    font-family: 'Roboto', sans-serif;
+  #login-body {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-  } 
-  
-  html{
-    overflow-x: hidden;
-  }
-  
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
   }
   
   .login-container{

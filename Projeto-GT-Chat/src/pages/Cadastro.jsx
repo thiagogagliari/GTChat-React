@@ -49,7 +49,7 @@ export default function Cadastro() {
   }
 
   return (
-    <main onLoad={DataMax}>
+    <main className='cadastro-main' onLoad={DataMax}>
       <div className="cadastro-container">
         <img
           src={LogoSemFundo}
@@ -58,13 +58,13 @@ export default function Cadastro() {
         />
         <h1>Cadastrar conta</h1>
 
-        <form>
+        <form className='cadastro-form'>
           <div className="cadastro-grupo-inputs">
             <input
               type="text"
               placeholder="Nome"
               name="nome"
-              id="nome"
+              id="nome" className='cadastro-input'
               required
             />
           </div>
@@ -78,6 +78,7 @@ export default function Cadastro() {
               max="currentDate"
               name="data-nascimento"
               id="data-nascimento"
+              className='cadastro-input'
               required
             />
           </div>
@@ -88,6 +89,7 @@ export default function Cadastro() {
               placeholder="CPF"
               name="cpf"
               id="cpf"
+              className='cadastro-input'
               onKeyDown={handleKeyDown}
               onInput={(e) => e.target.value = e.target.value.replace(/[^0-9.-]/g, '')}
               minLength="14"
@@ -102,6 +104,7 @@ export default function Cadastro() {
               placeholder="E-mail"
               name="email"
               id="email"
+              className='cadastro-input'
               required
             />
           </div>
@@ -113,6 +116,7 @@ export default function Cadastro() {
                 placeholder="Senha"
                 name="password"
                 id="password"
+                className='cadastro-input'
                 required
               />
               <i className={typeSenha ? 'fas fa-eye-slash' : 'fas fa-eye'} id="togglePassword" onClick={mudarTipo}></i> 
@@ -123,7 +127,7 @@ export default function Cadastro() {
         </form>
       </div>
       <div className="cadastro-possui-conta">
-        <p>Já tem uma conta? <a href="login.html">Fazer login</a></p>
+        <p>Já tem uma conta? <a href="/login">Fazer login</a></p>
       </div>
     </main>
   )

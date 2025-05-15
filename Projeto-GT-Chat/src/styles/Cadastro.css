@@ -9,30 +9,15 @@
   --color8: #ee80cf;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html{
-    overflow-x: hidden;
-}
-
-body{
+/* body{
   background-image: url(../assets/background.png); 
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
+} */
 
-main {
+.cadastro-main {
   margin: 30px 0px 30px 0px;
   display: flex;
   flex-direction: column;
@@ -65,14 +50,14 @@ main {
     margin-bottom: 10px;
 }
 
-h1 {
+.cadastro-container > h1 {
   font-size: 28px;
   color: var(--color3);
   margin-bottom: 15px;
   text-align: center;
 }
 
-input{
+.cadastro-input{
     font-size: 16px;
     text-align: center;
     color: var(--color2);
@@ -82,11 +67,11 @@ input{
     border-radius: 5px;
 }
 
-input::placeholder {
+.cadastro-input::placeholder {
   color: var(--color2);
 }
 
-button{
+.cadastro-form > button{
     width: 90%;
     height: 32px;
     padding: 5px;
@@ -99,7 +84,7 @@ button{
     font-size: 16px;
 }
 
-button:hover{
+.cadastro-form > button:hover{
     background-color: var(--color6);
     color: var(--color3);
     transition: 0.75s;
@@ -147,6 +132,7 @@ button:hover{
   transform: translateY(-50%);
   color: var(--color2);
   cursor: pointer;
+  
 }
 
 .cadastro-password-container i:hover {
