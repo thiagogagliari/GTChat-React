@@ -12,35 +12,41 @@
     padding: 0;
     box-sizing: border-box;
   }
+
   
   /* Container padrão */
   .home-container {
-    width: 100vw;
+    width: 90%;
     max-width: 1200px;
+    margin: 0 auto;
   }
   
  
-  #home-header{
-    height: 100px;
-    width: 100vw;
+  .home-header{ 
     background-color:var(--color2);
     padding: 20px 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
     
   }
   
-  .home-header-container {
+  /* .home-header-container {
     background-color: red;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-  }
+    height: 100vh;
+    margin: 0; 
+  } */
   
-  #logo{
-    width: 10px;
+  #home-logo{
+    margin-top: auto;
+    margin-bottom: 100px;
+    height: 60px;
   }
   
   /* Botões */
@@ -75,24 +81,25 @@
   .home-btn-fill:hover {
     background-color: #d9e6ff;
   }
+
+  .home-main{
+  margin: 0px;
+  padding: 30px;
+  background-color: #f4f8ff;
+  display: flex;
   
- 
-  main {
-    padding: 60px 0;
-    background-color: #f4f8ff;
-  }
+}
   
   .home-main-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
   }
   
   .home-text-area {
-    flex: 1;
-    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
   }
   
   .home-text-area h1 {

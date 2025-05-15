@@ -51,7 +51,7 @@ main {
   color: var(--color3);
 }
 
-#logo-icone {
+#cadastro-logo-icone {
     display: block;
     width: 80px;
     height: 80px;
@@ -60,7 +60,7 @@ main {
     object-fit: cover;
 }
 
-.grupo-inputs{
+.cadastro-grupo-inputs{
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -105,7 +105,7 @@ button:hover{
     transition: 0.75s;
 }
 
-.possui-conta {
+.cadastro-possui-conta {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,34 +113,34 @@ button:hover{
     margin-top: 15px;
 }
 
-.possui-conta p {
+.cadastro-possui-conta p {
   font-size: 16px;
   text-align: center;
   text-decoration: none;
 }
 
-.possui-conta a {
+.cadastro-possui-conta a {
     text-decoration: none;
     color: var(--color2);
 }
 
-.possui-conta a:hover {
+.cadastro-possui-conta a:hover {
   color: var(--color8);
   transition: 0.5s;
 }
 
-.password-container {
+.cadastro-password-container {
   position: relative;
   width: 90%;
   margin: 0 auto;
 }
 
-.password-container input {
+.cadastro-password-container input {
   width: 100%;
   padding-right: 40px;
 }
 
-.password-container i {
+.cadastro-password-container i {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -149,6 +149,6 @@ button:hover{
   cursor: pointer;
 }
 
-.password-container i:hover {
+.cadastro-password-container i:hover {
   color: var(--color6);
 }

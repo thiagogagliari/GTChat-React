@@ -1,6 +1,6 @@
 import '../styles/Cadastro.css'
 import LogoSemFundo from '../assets/logo-sem-fundo.png'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function Cadastro() {
 
@@ -54,12 +54,12 @@ export default function Cadastro() {
         <img
           src={LogoSemFundo}
           alt="logo do GT Chat"
-          id="logo-icone"
+          id="cadastro-logo-icone"
         />
         <h1>Cadastrar conta</h1>
 
         <form>
-          <div className="grupo-inputs">
+          <div className="cadastro-grupo-inputs">
             <input
               type="text"
               placeholder="Nome"
@@ -69,7 +69,7 @@ export default function Cadastro() {
             />
           </div>
 
-          <div className="grupo-inputs">
+          <div className="cadastro-grupo-inputs">
             <input
               placeholder="Data de nascimento"
               type="text"
@@ -82,7 +82,7 @@ export default function Cadastro() {
             />
           </div>
 
-          <div className="grupo-inputs">
+          <div className="cadastro-grupo-inputs">
             <input
               type="text"
               placeholder="CPF"
@@ -96,7 +96,7 @@ export default function Cadastro() {
             />
           </div>
 
-          <div className="grupo-inputs">
+          <div className="cadastro-grupo-inputs">
             <input
               type="email"
               placeholder="E-mail"
@@ -106,8 +106,8 @@ export default function Cadastro() {
             />
           </div>
 
-          <div className="grupo-inputs">
-            <div className="password-container">
+          <div className="cadastro-grupo-inputs">
+            <div className="cadastro-password-container">
               <input
                 type={typeSenha ? 'text' : 'password'}
                 placeholder="Senha"
@@ -122,7 +122,7 @@ export default function Cadastro() {
           <button type="button" onClick={cadastrar}>Criar conta</button>
         </form>
       </div>
-      <div className="possui-conta">
+      <div className="cadastro-possui-conta">
         <p>Já tem uma conta? <a href="login.html">Fazer login</a></p>
       </div>
     </main>

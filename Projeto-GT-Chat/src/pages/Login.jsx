@@ -1,8 +1,16 @@
 import '../styles/Login.css'
 import React from 'react'
+import { useState } from 'react'
 import LogoSemFundo from '../assets/logo-sem-fundo.png'
 
 export default function Login() {
+
+  // Alterna o tipo do input entre password e text
+  const [typeSenha, setSenha] = useState(false)
+  
+  function mudarTipo() {
+    setSenha(!typeSenha)
+  }
 
   function acessar() {
     window.location.href = '/dashboard'
@@ -31,13 +39,13 @@ export default function Login() {
           <div className="login-password-container">
             <input
               className='login-input'
-              type="password"
+              type={typeSenha ? 'text' : 'password'}
               id="password"
               name="password"
               placeholder="Digite sua senha"
               required
             />
-            <i className="fas fa-eye" id="togglePassword"></i>
+            <i className={typeSenha ? 'fas fa-eye-slash' : 'fas fa-eye'} id="togglePassword" onClick={mudarTipo}></i>
           </div>
         </div>
 
