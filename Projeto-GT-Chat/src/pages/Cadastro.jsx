@@ -49,7 +49,7 @@ export default function Cadastro() {
   }
 
   return (
-    <main className='cadastro-main' onLoad={DataMax}>
+    <div className="cadastro-body" onLoad={DataMax}>
       <div className="cadastro-container">
         <img
           src={LogoSemFundo}
@@ -119,7 +119,7 @@ export default function Cadastro() {
                 className='cadastro-input'
                 required
               />
-              <i className={typeSenha ? 'fas fa-eye-slash' : 'fas fa-eye'} id="togglePassword" onClick={mudarTipo}></i> 
+              <i className={typeSenha ? 'fas fa-eye-slash fa-lg' : 'fas fa-eye fa-lg'} id="togglePassword" onClick={mudarTipo}></i> 
             </div>
           </div>
 
@@ -129,6 +129,6 @@ export default function Cadastro() {
       <div className="cadastro-possui-conta">
         <p>Já tem uma conta? <a href="/login">Fazer login</a></p>
       </div>
-    </main>
+    </div>
   )
 }
