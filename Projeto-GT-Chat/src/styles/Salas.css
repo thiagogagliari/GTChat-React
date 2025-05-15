@@ -9,11 +9,11 @@
     --color8: #d0d1f0;
   }
   
-  body{
+  /* body{
     font-family: 'Roboto', sans-serif;
     width: 100vw;
     height: 100vh;
-  }
+  } */
   
   html{
     overflow-x: hidden;

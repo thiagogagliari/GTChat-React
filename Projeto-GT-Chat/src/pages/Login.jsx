@@ -11,12 +11,13 @@ export default function Login() {
     <>
         <div className="login-container">
       <img src={LogoSemFundo} alt="" className="login-logo" />
-      <h2>Acesse sua conta</h2>
+      <h2 className='login-texto'>Acesse sua conta</h2>
 
       <form action="loginForm">
-        <div className="grupo-inputs">
-          <label for="email"></label>
+        <div className="login-grupo-inputs">
+          <label className='login-label' for="email"></label>
           <input
+            className='login-input'
             type="email"
             id="email"
             name="email"
@@ -25,10 +26,11 @@ export default function Login() {
           />
         </div>
 
-        <div className="grupo-inputs">
+        <div className="login-grupo-inputs">
           <label for="password"></label>
-          <div className="password-container">
+          <div className="login-password-container">
             <input
+              className='login-input'
               type="password"
               id="password"
               name="password"
@@ -40,15 +42,15 @@ export default function Login() {
         </div>
 
         <div id="mensagemErro">
-          <div className="mensagem-erro"></div>
+          <div className="login-mensagem-erro"></div>
         </div>
 
-        <button type="button" onClick={acessar}>Entrar</button>
+        <button className='login-button' type="button" onClick={acessar}>Entrar</button>
 
-        <div className="criar-conta">
+        <div className="login-criar-conta">
           <p>
             Ainda não tem conta?
-            <a href="cadastro.html">Cadastre-se</a>
+            <a href="/cadastro">Cadastre-se</a>
           </p>
         </div>
       </form>
