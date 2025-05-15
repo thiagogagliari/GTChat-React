@@ -57,7 +57,7 @@ export default function Login() {
                 placeholder="Digite sua senha"
                 required
               />
-              <i className={typeSenha ? 'fas fa-eye-slash' : 'fas fa-eye'} id="togglePassword" onClick={mudarTipo}></i>
+              <i className={typeSenha ? 'fas fa-eye-slash fa-lg' : 'fas fa-eye fa-lg'} id="togglePassword" onClick={mudarTipo}></i>
             </div>
             {errorMessage && <p className="login-input-error">Email ou senha inválidos.</p>}
           </div>
