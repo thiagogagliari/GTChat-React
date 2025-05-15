@@ -1,16 +1,23 @@
+import '../styles/Login.css'
 import React from 'react'
+import LogoSemFundo from '../assets/logo-sem-fundo.png'
 
 export default function Login() {
+
+  function acessar() {
+    window.location.href = '/dashboard'
+  }
   return (
     <>
-        <div class="login-container">
-      <img src="./assets/logo-sem-fundo.png" alt="" class="login-logo" />
-      <h2>Acesse sua conta</h2>
+        <div className="login-container">
+      <img src={LogoSemFundo} alt="" className="login-logo" />
+      <h2 className='login-texto'>Acesse sua conta</h2>
 
       <form action="loginForm">
-        <div class="grupo-inputs">
-          <label for="email"></label>
+        <div className="login-grupo-inputs">
+          <label className='login-label' for="email"></label>
           <input
+            className='login-input'
             type="email"
             id="email"
             name="email"
@@ -19,30 +26,31 @@ export default function Login() {
           />
         </div>
 
-        <div class="grupo-inputs">
+        <div className="login-grupo-inputs">
           <label for="password"></label>
-          <div class="password-container">
+          <div className="login-password-container">
             <input
+              className='login-input'
               type="password"
               id="password"
               name="password"
               placeholder="Digite sua senha"
               required
             />
-            <i class="fas fa-eye" id="togglePassword"></i>
+            <i className="fas fa-eye" id="togglePassword"></i>
           </div>
         </div>
 
         <div id="mensagemErro">
-          <div class="mensagem-erro"></div>
+          <div className="login-mensagem-erro"></div>
         </div>
 
-        <button type="button" onclick="acessar()">Entrar</button>
+        <button className='login-button' type="button" onClick={acessar}>Entrar</button>
 
-        <div class="criar-conta">
+        <div className="login-criar-conta">
           <p>
             Ainda não tem conta?
-            <a href="cadastro.html">Cadastre-se</a>
+            <a href="/cadastro">Cadastre-se</a>
           </p>
         </div>
       </form>
