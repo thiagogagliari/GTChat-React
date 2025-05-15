@@ -14,31 +14,37 @@
   }
   
   /* Container padrão */
-  .container {
-    width: 90%;
+  .home-container {
+    width: 100vw;
     max-width: 1200px;
-    margin: 0 auto;
   }
   
  
-  header {
+  #home-header{
+    height: 100px;
+    width: 100vw;
     background-color:var(--color2);
     padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
   }
   
-  .header-container {
+  .home-header-container {
+    background-color: red;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100vw;
   }
   
-  .logo img {
-    height: 60px;
-    width: auto;
+  #logo{
+    width: 10px;
   }
   
   /* Botões */
-  .nav-buttons button {
+  .home-nav-buttons{
     margin-left: 15px;
     padding: 10px 20px;
     font-size: 1rem;
@@ -49,24 +55,24 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
   
-  .btn-outline {
+  .home-btn-outline {
     background-color: transparent;
     border: 2px solid var(--color3);
     color: var(--color3);
   }
   
-  .btn-outline:hover {
+  .home-btn-outline:hover {
     background-color: var(--color3);
     color: var(--color2);
   }
   
-  .btn-fill {
+  .home-btn-fill {
     background-color:var(--color3);
     color: var(--color2);
     border: none;
   }
   
-  .btn-fill:hover {
+  .home-btn-fill:hover {
     background-color: #d9e6ff;
   }
   
@@ -76,7 +82,7 @@
     background-color: #f4f8ff;
   }
   
-  .main-content {
+  .home-main-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,62 +90,62 @@
     gap: 40px;
   }
   
-  .text-area {
+  .home-text-area {
     flex: 1;
     min-width: 300px;
   }
   
-  .text-area h1 {
+  .home-text-area h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: 800;
     color: #0a2a66;
   }
   
-  .text-area h1 span {
+  .home-text-area h1 span {
     color: #0056b3;
   }
   
-  .text-area p {
+  .home-text-area p {
     font-size: 1.1rem;
     color: #333333;
   }
   
-  .image-area {
+  .home-image-area {
     flex: 1;
     min-width: 500px;
     display: flex;
     justify-content: center;
   }
   
-  .image-area img {
+  .home-image-area img {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
   }
   
   
-  .features {
+  .home-features {
     background-color: #ffffff;
     padding: 60px 20px;
     text-align: center;
   }
   
-  .features h2 {
+  .home-features h2 {
     font-size: 2rem;
     font-weight: 800;
     color: #0a2a66;
     margin-bottom: 40px;
   }
   
-  .cards {
+  .home-cards {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
   }
   
-  .card {
+  .home-card {
     background-color: #ffffff;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -148,19 +154,19 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .card:hover {
+  .home-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
   }
   
-  .card h3 {
+  .home-card h3 {
     font-size: 1.25rem;
     font-weight: 700;
     color: #0a2a66;
     margin-bottom: 15px;
   }
   
-  .card p {
+  .home-card p {
     font-size: 1rem;
     color: #333333;
     line-height: 1.5;

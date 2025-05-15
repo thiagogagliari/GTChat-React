@@ -1,31 +1,30 @@
-import React from 'react'
+import '../styles/Salas.css'
+import ImagemThiago from '../assets/profile.png'
+import ImagemJulia from '../assets/none.png'
+import ImagemJully from '../assets/none.png'
 
 export default function SalaFront() {
   return (
     <>
-      <div class="chat-container">
+      <div className="chat-container">
       {/* <!-- BARRA LATERAL COM SALAS --> */}
-      <div class="sidebar">
-        <div class="sidebar-header">
+      <div className="sidebar">
+        <div className="sidebar-header">
           <h2>Membros Online</h2>
-          <i class="bi bi-chat-dots-fill"></i>
+          <i className="bi bi-chat-dots-fill"></i>
         </div>
 
-        <div class="room-list">
-          <div class="room-item">
-            <img src="/assets/ivan.png" alt="javascript" />
-            <span>Ivan Domingos</span>
-          </div>
-          <div class="room-item">
-            <img src="/assets/profile.png" alt="html" />
+        <div className="room-list">
+          <div className="room-item">
+            <img src={ImagemThiago} alt="html" />
             <span>Thiago Gagliari</span>
           </div>
-          <div class="room-item">
-            <img src="/assets/none.png" alt="react" />
+          <div className="room-item">
+            <img src={ImagemJulia} alt="react" />
             <span>Júlia Catapan</span>
           </div>
-          <div class="room-item">
-            <img src="/assets/none.png" alt="react" />
+          <div className="room-item">
+            <img src={ImagemJully} alt="react" />
             <span>Jully Costa</span>
           </div>
         </div>
@@ -33,19 +32,18 @@ export default function SalaFront() {
 
       {/* <!-- AREA PRINCIPAL DO CHAT --> */}
 
-      <div class="main-chat">
-        <div class="chat-header">
+      <div className="main-chat">
+        <div className="chat-header">
           <h2>Chat Front-End</h2>
-          <i id="search" class="bi bi-search" onclick="search()"></i>
-          <a href="./dashboard.html"><i class="bi bi-box-arrow-left"></i></a>
+          <a href="./dashboard.html"><i className="bi bi-box-arrow-left"></i></a>
         </div>
 
         {/* <!-- Nossa busca será injetada aqui --> */}
-        <div id="search-container" style="padding: 10px"></div>
+        <div id="search-container" style={{padding: 20}}></div>
 
-        <div class="message-container">
+        <div className="message-container">
           {/* <!-- MENSAGENS SERÃO INSERIDAS AQUI VIA JAVASCRIPT--> */}
-          <div class="container-message">
+          <div className="container-message">
             <img src="/assets/profile.png" alt="" />
             <h4>Thiago Gagliari</h4>
             <p>
@@ -55,7 +53,7 @@ export default function SalaFront() {
               delectus consectetur autem cupiditate qui!
             </p>
           </div>
-          <div class="container-message">
+          <div className="container-message">
             <img src="/assets/ivan.png" alt="" />
             <h4>Ivan Domingos</h4>
             <p>
@@ -65,7 +63,7 @@ export default function SalaFront() {
               perspiciatis illo enim!
             </p>
           </div>
-          <div class="container-message">
+          <div className="container-message">
             <img src="/assets/none.png" alt="" />
             <h4>Júlia Catapan</h4>
             <p>
@@ -81,7 +79,7 @@ export default function SalaFront() {
               molestias debitis voluptas quae animi! Dolore quidem consequatur.
             </p>
           </div>
-          <div class="container-message">
+          <div className="container-message">
             <img src="/assets/none.png" alt="" />
             <h4>Jully Costa</h4>
             <p>
@@ -92,14 +90,14 @@ export default function SalaFront() {
             </p>
           </div>
         </div>
-        <div class="message-input">
+        <div className="message-input">
           <input
             type="text"
             id="message"
             placeholder="Digite uma mensagem..."
           />
-          <button id="btn-send" class="send-message">
-            <i id="icon-send" class="fa fa-paper-plane fa-2x"></i>
+          <button id="btn-send" className="send-message">
+            <i id="icon-send" className="fa fa-paper-plane fa-2x"></i>
           </button>
         </div>
       </div>

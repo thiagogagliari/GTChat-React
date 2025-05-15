@@ -1,5 +1,6 @@
 import LogoSemFundo from '../assets/logo-sem-fundo.png'
 import ChatImagemFundo from '../assets/chat-image-fundo.png'
+import Footer from '../components/Footer'
 import '../styles/Home.css'
 
 export default function Home(){
@@ -15,8 +16,8 @@ export default function Home(){
         <>
 <header>
     <div className="container header-container">
-      <div className="logo">
-        <img src={LogoSemFundo} alt="GTChat Logo" />
+      <div>
+        <img id='logo' src={LogoSemFundo} alt="GTChat Logo" />
       </div>
       <div className="nav-buttons">
         <button className="btn-outline" onClick={goToLogin}>Login</button>
@@ -57,6 +58,7 @@ export default function Home(){
       </div>
     </div>
   </section>
+  <Footer/>
         </>
     )
 }
