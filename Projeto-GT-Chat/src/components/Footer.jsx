@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <>
       <footer>
-        <div ClassName="container footer-container">
+        <div className="footer-container">
           <p className="footer-title">Nossos apoiadores</p>
           <div className="sponsors">
             <img src={DigitalCollegeBranco} alt="Digital College" />

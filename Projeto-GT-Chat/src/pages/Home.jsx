@@ -8,15 +8,15 @@ export default function Home(){
 
     return (
       <>
-        <div className="main-header">
-          <div className="header-container">
-           <img src={LogoSemFundo} alt="Logo" className="header-logo" />
-              <div className="header-buttons">
-              <a href="/login" className="btn-outline">Login</a>
-               <a href="/cadastro" className="btn-fill">Cadastre-se</a>
-          </div>
-        </div>
-        </div>
+       <header className='home-header'>
+            {/* <div className="home-header-container"> */}
+                <img id='home-logo' src={LogoSemFundo} alt="GTChat Logo" />
+              <div className="home-nav-buttons">
+                <button className="home-btn-outline" onClick={goToLogin}>Login</button>
+                <button className="home-btn-fill" onClick={goToRegister}>Cadastre-se</button>
+              </div>
+            {/* </div> */}
+          </header>
 
           <main className='home-main'>
             <div className="home-main-content">

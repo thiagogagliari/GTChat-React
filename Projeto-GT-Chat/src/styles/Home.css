@@ -4,62 +4,66 @@
   --color-hover: #d9e6ff;
 }
 
-.main-header {
-  background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 69%, rgba(0, 212, 255, 1) 130%);
-  width: 100%;
-  padding: 20px 0;
-}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+  .home-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+ 
+  .home-header{ 
+    background-color:var(--color2);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  #home-logo{
+    height: 60px;
+  }
+  
+  .home-nav-buttons{
+    margin-left: 15px;
+    width: 250px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .home-nav-buttons > button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-.header-container {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-logo {
-  width: 5%;
-}
-
-.header-buttons {
-  display: flex;
-  gap: 15px;
-}
-
-.header-buttons a {
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.3s ease;
-}
-
-.btn-outline {
-  color: var(--color-white);
-  border: 2px solid var(--color-white);
-  background-color: transparent;
-}
-
-.btn-outline:hover {
-  background-color: var(--color-white);
-  color: var(--color-primary);
-}
-
-.btn-fill {
-  color: var(--color-primary);
-  background-color: var(--color-white);
-  border: 2px solid var(--color-primary);
-}
-
-.btn-fill:hover {
-  background-color: #083395;
-  color: var(--color-hover);
-  border: 2px solid var(--color-hover);
-}
-
+  .home-btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--color3);
+    color: var(--color3);
+  }
+  
+  .home-btn-outline:hover {
+    background-color: var(--color3);
+    color: var(--color2);
+  }
+  
+  .home-btn-fill {
+    background-color:var(--color3);
+    color: var(--color2);
+    border: none;
+  }
+  
+  .home-btn-fill:hover {
+    background-color: #d9e6ff;
+  }
 
   .home-main{
   padding: 40px 0;
@@ -106,8 +110,7 @@
     height: auto;
     border-radius: 12px;
   }
-  
-  
+ 
   .home-features {
     background-color: #ffffff;
     padding: 60px 20px;
