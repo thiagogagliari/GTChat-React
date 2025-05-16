@@ -10,39 +10,18 @@
     --error: #b80a0a;
   }
   
-  body{
-    background-image: url(../assets/background.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    font-family: 'Roboto', sans-serif;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* height: 100vh; */
-  } 
-  
-  #bodyLogin{
+  #login-body {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-  }
-  html{
-    overflow-x: hidden;
-  }
-  
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
   }
   
   .login-container{
     background-color: #181bc9;
-    padding: 20px;
+    padding: 40px 20px;
     width: 400px;
-    height: 500px;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0px 1px 29px -2px #181bc9;
@@ -58,7 +37,7 @@
   }
   
   .login-grupo-inputs{
-    margin-top: 25px;
+    margin-top: 20px;
     margin-bottom: 15px;
   }
   
@@ -88,13 +67,13 @@
   .login-button{
     width: 90%;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     color: var(--color3);
     background-color: var(--color5);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .login-button:hover{

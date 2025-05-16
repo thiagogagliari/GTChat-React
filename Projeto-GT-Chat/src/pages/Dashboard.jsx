@@ -5,7 +5,8 @@ import FrontEndImage from '../assets/frontend.jpg';
 import BackEndImage from '../assets/backend.jpg';
 import ProjectImage from '../assets/projects.jpg';
 import Footer from '../components/Footer';
-import { Accessibility, LogOut } from 'lucide-react';
+import { LogOut } from 'lucide-react';
+import { UsersRound } from 'lucide-react';
 
 export default function Dashboard(){
 
@@ -29,9 +30,8 @@ export default function Dashboard(){
         <h2 className='dashboard-texto'>Salas Frontend</h2>
         <img src={FrontEndImage} alt="" />
         <p className='dashboard-paragrafo'>Membros Online:</p>
-        <i className="bi bi-people-fill">
+        <UsersRound />
           <p className='dashboard-paragrafo'>3 Pessoas</p>
-        </i>
           <button onClick={acessoFront}>Entrar</button>
       </div>
 
@@ -39,9 +39,8 @@ export default function Dashboard(){
         <h2 className='dashboard-texto'>Sala Backend</h2>
           <img src={BackEndImage} alt="" />
         <p className='dashboard-paragrafo'>Membros Online:</p>
-        <i className="bi bi-people-fill">
+        <UsersRound />
           <p className='dashboard-paragrafo'>0 Pessoas</p>
-        </i>
           <button onClick={acessoFront} className="btn-salas">Entrar</button>
       </div>
 
@@ -49,9 +48,8 @@ export default function Dashboard(){
         <h2 className='dashboard-texto'>Salas Projetos</h2>
         <img src={ProjectImage} alt="" />
         <p className='dashboard-paragrafo'>Membros Online:</p>
-        <i className="bi bi-people-fill">
+        <UsersRound />
           <p className='dashboard-paragrafo'>0 Pessoas</p>
-        </i>
           <button onClick={acessoFront}>Entrar</button>
       </div>
     </div>

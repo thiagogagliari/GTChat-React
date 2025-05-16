@@ -1,9 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html{
+  overflow-x: hidden;
+}
 
 body{
+    background-image: url(./assets/background.png); 
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
   }
