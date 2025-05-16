@@ -6,6 +6,13 @@ import React from 'react'
 
 export default function Home(){
 
+   function goToLogin(){
+    window.location.href = '/login'
+  }
+
+  function goToRegister(){
+    window.location.href = '/cadastro'
+  }
     return (
       <>
        <header className='home-header'>
