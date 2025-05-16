@@ -17,7 +17,7 @@
   }
  
   .home-header{ 
-    background-color:var(--color2);
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 77%, rgba(0, 212, 255, 1) 130%);
     padding: 20px 0;
     display: flex;
     justify-content: space-around;
@@ -62,7 +62,9 @@
   }
   
   .home-btn-fill:hover {
-    background-color: #d9e6ff;
+    background-color: #090979;
+    color: #d9e6ff;
+    border: 2px solid var(--color-white)
   }
 
   .home-main{
@@ -169,6 +171,6 @@
   }
 }
 
-.main-header {
+.home-header {
   animation: slideDown 0.6s ease-out;
 }
