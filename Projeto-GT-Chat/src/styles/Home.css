@@ -1,10 +1,7 @@
 :root {
-  --color1: #181bc9;
-  --color2: #1b3e76;
-  --color3: #fff;
-  --color4: #000;
-  --color5: #7274F2;
-  --color6: #BF0067;
+  --color-primary: #1b3e76;
+  --color-white: #ffffff;
+  --color-hover: #d9e6ff;
 }
 
 * {
@@ -12,15 +9,12 @@
     padding: 0;
     box-sizing: border-box;
   }
-
-  
-  /* Container padrão */
+ 
   .home-container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
   }
-  
  
   .home-header{ 
     background-color:var(--color2);
@@ -34,7 +28,6 @@
     height: 60px;
   }
   
-  /* Botões */
   .home-nav-buttons{
     margin-left: 15px;
     width: 250px;
@@ -112,20 +105,12 @@
     color: #333333;
   }
   
-  /* .home-image-area {
-    flex: 1;
-    min-width: 500px;
-    display: flex;
-    justify-content: center;
-  }
-   */
   .home-image-area img {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
   }
-  
-  
+ 
   .home-features {
     background-color: #ffffff;
     padding: 60px 20px;
@@ -172,3 +157,18 @@
     color: #333333;
     line-height: 1.5;
   }
+
+  @keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-header {
+  animation: slideDown 0.6s ease-out;
+}

@@ -46,7 +46,10 @@ export default function Cadastro() {
     if (!nome || !dataNascimento || !cpf || !email || !senha) {
         alert('Por favor, preencha todos os campos.')
     }
-  }
+    else if(nome && dataNascimento && cpf && email && senha){
+      alert('Sua conta foi criado com sucesso!!!')
+      window.location.href = '/login'
+  }}
 
   return (
     <div className="cadastro-body" onLoad={DataMax}>

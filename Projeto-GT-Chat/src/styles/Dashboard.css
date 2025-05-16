@@ -103,3 +103,8 @@
   font-size: 20px;
   margin-left: 15px;
 }
+
+.lucide-users-round{
+  color: var(--color6);
+  margin-left: 200px;
+}
