@@ -7,7 +7,7 @@
     --color6: #BF0067;
     --color7: #a8a9e6;
     --color8: #ee80cf;
-    --error: #b80a0a;
+    --error: #fd3030;
   }
   
   #login-body {
@@ -19,12 +19,12 @@
   }
   
   .login-container{
-    background-color: #181bc9;
+    background-color: var(--color1);
     padding: 40px 20px;
     width: 400px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0px 1px 29px -2px #181bc9;
+    box-shadow: 0px 0px 5px var(--color2);
   }
   
   .login-logo{
@@ -79,7 +79,7 @@
   .login-button:hover{
     background-color: var(--color6);
     color: var(--color3);
-    transition: 1.0s;
+    transition: 1s;
   }
   
   .login-criar-conta{
@@ -93,6 +93,7 @@
     font-size: 20px;
     color: var(--color3);
   }
+
   .login-criar-conta a{
     margin-left: 8px;
     font-size: 20px;
@@ -102,8 +103,8 @@
   }
   
   .login-criar-conta a:hover{
-    color: var(--color6);
-    transition: 1.2s;
+    color: var(--color5);
+    transition: 0.5s;
     margin-left: 10px;
     font-weight: bold;
   }
@@ -145,8 +146,10 @@
   .login-input-error {
     font-size: 20px;
     margin-top: 20px;
-    color: red;  }
-  
-  .login-input-error::placeholder {
     color: var(--error);
+    font-weight: 500;
   }
+  
+  /* .login-input-error::placeholder {
+    color: var(--error);
+  } */

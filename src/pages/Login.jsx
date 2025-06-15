@@ -1,6 +1,7 @@
 import '../styles/Login.css'
 import React, { useState } from 'react'
 import LogoSemFundo from '../assets/logo-sem-fundo.png'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
 
@@ -29,9 +30,11 @@ export default function Login() {
 
   return (
     <div id='login-body'>
-        <div className="login-container">
-      <img src={LogoSemFundo} alt="" className="login-logo" />
-      <h2 className='login-texto'>Acesse sua conta</h2>
+      <div className="login-container">
+        <Link to='/'>
+          <img src={LogoSemFundo} alt="" className="login-logo" />
+        </Link>
+        <h2 className='login-texto'>Acesse sua conta</h2>
 
         <form action="loginForm">
           <div className="login-grupo-inputs">

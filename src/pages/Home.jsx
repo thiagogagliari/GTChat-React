@@ -3,24 +3,21 @@ import ChatImagemFundo from '../assets/chat-image-fundo.png'
 import Footer from '../components/Footer'
 import '../styles/Home.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Home(){
-
-   function goToLogin(){
-    window.location.href = '/login'
-  }
-
-  function goToRegister(){
-    window.location.href = '/cadastro'
-  }
     return (
       <>
        <header className='home-header'>
             {/* <div className="home-header-container"> */}
                 <img id='home-logo' src={LogoSemFundo} alt="GTChat Logo" />
               <div className="home-nav-buttons">
-                <button className="home-btn-outline" onClick={goToLogin}>Login</button>
-                <button className="home-btn-fill" onClick={goToRegister}>Cadastre-se</button>
+                <Link to='/login'>
+                  <button className="home-btn-outline">Login</button>
+                </Link>
+                <Link to='/cadastro'>
+                  <button className="home-btn-fill">Cadastre-se</button>
+                </Link>
               </div>
             {/* </div> */}
           </header>

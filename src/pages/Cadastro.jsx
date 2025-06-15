@@ -1,8 +1,10 @@
 import '../styles/Cadastro.css'
 import LogoSemFundo from '../assets/logo-sem-fundo.png'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Cadastro() {
+  const [errorMessage, setErrorMessage] = useState(false)
 
   // Alterna o tipo do input entre password e text
   const [typeSenha, setSenha] = useState(false)
@@ -44,21 +46,24 @@ export default function Cadastro() {
     const senha = document.getElementById("password").value
 
     if (!nome || !dataNascimento || !cpf || !email || !senha) {
-        alert('Por favor, preencha todos os campos.')
+        // alert('Por favor, preencha todos os campos.')
+        setErrorMessage(true)
     }
     else if(nome && dataNascimento && cpf && email && senha){
-      alert('Sua conta foi criado com sucesso!!!')
+      alert('Conta criada com sucesso!')
       window.location.href = '/login'
   }}
 
   return (
     <div className="cadastro-body" onLoad={DataMax}>
       <div className="cadastro-container">
-        <img
-          src={LogoSemFundo}
-          alt="logo do GT Chat"
-          id="cadastro-logo-icone"
-        />
+        <Link to='/'>
+          <img
+            src={LogoSemFundo}
+            alt="logo do GT Chat"
+            id="cadastro-logo-icone"
+          />
+        </Link>
         <h1>Cadastrar conta</h1>
 
         <form className='cadastro-form'>
@@ -125,9 +130,12 @@ export default function Cadastro() {
               <i className={typeSenha ? 'fas fa-eye-slash fa-lg' : 'fas fa-eye fa-lg'} id="togglePassword" onClick={mudarTipo}></i> 
             </div>
           </div>
-
           <button type="button" onClick={cadastrar}>Criar conta</button>
         </form>
+        {errorMessage && 
+        <p className='cadastro-input-error'>
+          Por favor preencha todos os campos.
+        </p>}
       </div>
       <div className="cadastro-possui-conta">
         <p>Já tem uma conta? <a href="/login">Fazer login</a></p>

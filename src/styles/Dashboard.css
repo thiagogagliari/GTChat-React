@@ -5,7 +5,9 @@
   --color4: #000;
   --color5: #7274F2;
   --color6: #BF0067;
-  --color7: #cccc
+  --color7: #a8a9e6;
+  --color8: #ee80cf;
+  --color9: #cccc;
 }
 
 .dashboard-card img{
@@ -25,10 +27,12 @@
   color: var(--color3);
   text-align: center;
   font-size: 30px;
+  padding: 3px;
 }
 
 .dashboard-paragrafo{
   text-align: center;
+  margin-top: 10px;
 }
 
 #cabecalho{
@@ -39,6 +43,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+#cabecalho a, img{
+  cursor: pointer;
 }
 
 #cabecalho i:hover{
@@ -60,29 +68,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 500px;
+  width: 350px;
+  height: 430px;
   background-color: var(--color3);
   border-radius: 10px;
-  box-shadow: 0 0 10px var(--color5);
+  box-shadow: 0 0 5px var(--color7);
 }
 
-.dashboard-container button{
+.dashboard-card-btn {
   width: 80%;
   margin: 20px 40px;
   background-color: var(--color5);
   color: var(--color3);
-  border: 2px solid var(--color2);
+  border: 1px solid var(--color7);
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 20px;
   cursor: pointer;
 }
 
-.dashboard-container button:hover{
+.dashboard-card-btn:hover{
   background-color: var(--color2);
   color: var(--color3);
-  transition: all 0.8s ease;
+  transition: all 0.5s ease;
 }
 
 .dashboard i{
@@ -91,20 +99,19 @@
   margin: 30px;
 }
 
-.dashboard bi-people-fill{
+.dashboard-membros-online{
   display: flex;
   justify-content: center;
   margin: 5px;
   align-items: center;
   color: var(--color6);
+  gap: 10px;
 }
 
-.bi-people-fill p{
+.dashboard-membros-online p{
   font-size: 20px;
-  margin-left: 15px;
 }
 
 .lucide-users-round{
   color: var(--color6);
-  margin-left: 200px;
 }
