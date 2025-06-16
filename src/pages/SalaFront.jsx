@@ -6,7 +6,7 @@ import { LogOut } from 'lucide-react';
 import { Search } from 'lucide-react';
 import { useState } from 'react';
 import { Message } from '../components/Message'
-import { UsersOnline } from '../components/UsersOnline';
+import { ChatSideBar } from '../components/ChatSideBar';
 
 export default function SalaFront() {
   const [showSearch, setShowSearch] = useState(false);
@@ -39,29 +39,6 @@ export default function SalaFront() {
   }
   ];
 
-  const usersOnlineLista = [
-          {
-              id: 1,
-              nome: "Thiago Gagliari",
-              img: ImagemThiago
-          },
-          {
-              id: 2,
-              nome: "Julia Catapan",
-              img: ImagemNone
-          },
-          {
-              id: 3,
-              nome: "Jully Costa",
-              img: ImagemNone
-          },
-          {
-              id: 4,
-              nome: "Rafael ",
-              img: ImagemNone
-          }
-      ]
-
   const filteredMessages = messages.filter(message => 
     message.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
     message.author.toLowerCase().includes(searchTerm.toLowerCase())
@@ -70,24 +47,10 @@ export default function SalaFront() {
   return (
     <>
       <div className="chat-container">
-        {/* <!-- BARRA LATERAL COM SALAS --> */}
-        <div className="sidebar">
-          <div className="sidebar-header">
-            <h2>Membros Online</h2>
-          </div>
-
-          <div className="room-list">
-            {usersOnlineLista.map(user => (
-              <UsersOnline
-                key={user.id}
-                nome={user.nome}
-                img={user.img}
-              />
-            ))}
-          </div>
-          
-        </div>
-
+        
+        {/* <!-- BARRA LATERAL COM USUARIOS ONLINE --> */}
+        <ChatSideBar />
+      
         {/* <!-- AREA PRINCIPAL DO CHAT --> */}
         <div className="main-chat">
           <div className="chat-header">

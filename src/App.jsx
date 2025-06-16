@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Cadastro from "./pages/Cadastro";
 import Dashboard from "./pages/Dashboard";
 import SalaFront from './pages/SalaFront'
+import { RecuperarSenha } from "./pages/RecuperarSenha";
 
 function App() {
 
@@ -16,10 +17,10 @@ function App() {
         {<Route path="/cadastro" element={<Cadastro />} />}
         {<Route path="/dashboard" element={<Dashboard />} />}
         {<Route path="/salas" element={<SalaFront />} />}
+        {<Route path="/recuperar-senha" element={<RecuperarSenha />} />}
+        
       </Routes>
-    </BrowserRouter>
-     
-     
+    </BrowserRouter> 
     </>
   )
 }

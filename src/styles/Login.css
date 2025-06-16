@@ -40,6 +40,17 @@
     margin-top: 20px;
     margin-bottom: 15px;
   }
+
+  .login-grupo-inputs a {
+    text-decoration: none;
+    color: var(--color7);
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  .login-grupo-inputs p {
+    margin-top: 5px;
+  }
   
   .login-texto{
     color: var(--color3);
@@ -67,7 +78,7 @@
   .login-button{
     width: 90%;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 2px;
     color: var(--color3);
     background-color: var(--color5);
     border: none;
@@ -87,26 +98,22 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 15px;
   }
   .login-criar-conta p{
-    font-size: 20px;
-    color: var(--color3);
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
   }
 
   .login-criar-conta a{
-    margin-left: 8px;
-    font-size: 20px;
-    text-align: center;
-    color: var(--color7);
+    color: var(--color2);
     text-decoration: none;
   }
   
   .login-criar-conta a:hover{
-    color: var(--color5);
-    transition: 0.5s;
-    margin-left: 10px;
-    font-weight: bold;
+    color: var(--color6);
+    transition: 0.3s;
   }
   
   .login-password-container {

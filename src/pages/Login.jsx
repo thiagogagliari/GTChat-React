@@ -7,6 +7,7 @@ export default function Login() {
 
   // Alterna o tipo do input entre password e text
   const [typeSenha, setSenha] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
   
   function mudarTipo() {
     setSenha(!typeSenha)
@@ -50,7 +51,6 @@ export default function Login() {
           </div>
 
           <div className="login-grupo-inputs">
-            <label htmlFor="password"></label>
             <div className="login-password-container">
               <input
                 className='login-input'
@@ -59,24 +59,21 @@ export default function Login() {
                 name="password"
                 placeholder="Digite sua senha"
                 required
-              />
+              />   
               <i className={typeSenha ? 'fas fa-eye-slash fa-lg' : 'fas fa-eye fa-lg'} id="togglePassword" onClick={mudarTipo}></i>
             </div>
-            {errorMessage && <p className="login-input-error">Email ou senha inválidos.</p>}
+              <p><a href='/recuperar-senha'>Esqueceu sua senha?</a></p>
           </div>
-
-          
 
           <button className='login-button' type="button" onClick={acessar}>Entrar</button>
-
-          <div className="login-criar-conta">
-            <p>
-              Ainda não tem conta?
-              <a className='login-direct-cadastro' href="/cadastro">Cadastre-se</a>
-            </p>
-          </div>
+            {errorMessage && <p className="login-input-error">Email ou senha inválidos.</p>}
         </form>
       </div>
+          <div className="login-criar-conta">
+            <p>
+              Ainda não tem conta? <a href="/cadastro">Cadastre-se</a>
+            </p>
+          </div>
     </div>
   )
 }
