@@ -42,7 +42,6 @@
   }
 
   .login-grupo-inputs a {
-    text-decoration: none;
     color: var(--color7);
     cursor: pointer;
     font-size: 15px;

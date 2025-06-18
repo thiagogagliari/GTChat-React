@@ -41,7 +41,12 @@ export default function Dashboard(){
             <img src={LogoSemFundo} alt="" />
           </Link>
           <h1>Salas Disponíveis</h1>
-          <a onClick={dashboardLogout}> <LogOut /></a>
+          <div className="dropdown">
+            <a onClick={dashboardLogout}><LogOut /></a>
+            <div className="dropdown-content">
+              <a href="/login">Logout</a>
+            </div>
+          </div>
         </header>
 
         <div className="dashboard-container">

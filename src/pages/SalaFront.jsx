@@ -55,8 +55,17 @@ export default function SalaFront() {
         <div className="main-chat">
           <div className="chat-header">
             <h2>Chat Front-End</h2>
-            <a href="#" onClick={(e) => { e.preventDefault(); setShowSearch(!showSearch); }}><Search/></a>
-            <a href="/dashboard"><LogOut/></a>
+            <div className='chat-header-icons'>
+              <a href="#" onClick={(e) => { e.preventDefault(); setShowSearch(!showSearch); }}><Search/></a>
+
+              <div className='dropdown'>
+                <a href='/dashboard'><LogOut/></a>
+                <div className='dropdown-content'>
+                  <a href="/dashboard">Voltar</a>
+                </div>
+              </div>
+
+            </div>
           </div>
 
           {/* <!-- Nossa busca será injetada aqui --> */}
