@@ -1,32 +1,51 @@
 import '../styles/Login.css'
 import React, { useState } from 'react'
 import LogoSemFundo from '../assets/logo-sem-fundo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Login() {
+  const [errorMessage, setErrorMessage] = useState('')
+  const navigate = useNavigate()
 
   // Alterna o tipo do input entre password e text
   const [typeSenha, setSenha] = useState(false)
-  const [openModal, setOpenModal] = useState(false)
   
   function mudarTipo() {
     setSenha(!typeSenha)
   }
-  const [errorMessage, setErrorMessage] = useState(false);
 
-  function acessar() {
+  async function acessar() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     
 
-    if (email === 'user@user.com' && password === '123456') {
-      console.log('success')
-      window.location.href = '/dashboard';
-    } else {
-      console.log('error')
-      setErrorMessage(true);
+    if (!email || !password) {
+      setErrorMessage('Por favor, preencha todos os campos.')
+      return
     }
-    console.log('error',errorMessage)
+    
+    try {
+      const res = await fetch('http://localhost:3001/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      })
+
+      const result = await res.json()
+
+      if (!res.ok) {
+        setErrorMessage(result.message || 'Erro ao fazer login')
+        return
+      }
+
+      localStorage.setItem('token', result.token)
+      localStorage.setItem('user', JSON.stringify(result.user))
+
+      navigate('/dashboard')
+    } catch (err) {
+      console.error(err)
+      setErrorMessage('Erro ao conectar com o servidor')
+    }
   }
 
   return (
@@ -62,16 +81,18 @@ export default function Login() {
               />   
               <i className={typeSenha ? 'fas fa-eye-slash fa-lg' : 'fas fa-eye fa-lg'} id="togglePassword" onClick={mudarTipo}></i>
             </div>
-              <p><a href='/recuperar-senha'>Esqueceu sua senha?</a></p>
           </div>
 
           <button className='login-button' type="button" onClick={acessar}>Entrar</button>
-            {errorMessage && <p className="login-input-error">Email ou senha inválidos.</p>}
+            {errorMessage && (
+              <p className="login-input-error">{errorMessage}</p>
+            )}
         </form>
       </div>
           <div className="login-criar-conta">
             <p>
-              Ainda não tem conta? <a href="/cadastro">Cadastre-se</a>
+              Ainda não tem conta?
+              <Link to="/cadastro"> Cadastre-se</Link>
             </p>
           </div>
     </div>
