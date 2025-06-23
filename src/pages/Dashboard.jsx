@@ -5,33 +5,38 @@ import BackEndImage from '../assets/backend.jpg';
 import ProjectImage from '../assets/projects.jpg';
 import Footer from '../components/Footer';
 import { LogOut } from 'lucide-react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { DashboardCard } from '../components/DashboardCard';
+import { useEffect, useState } from 'react'
 
 export default function Dashboard(){
-  const salas = [
-        {
-            nome: "Frontend",
-            img: FrontEndImage,
-            totalOnline: 3,
-            rota: '/salas'
-        },
-        {
-            nome: "Backend",
-            img: BackEndImage,
-            totalOnline: 0,
-            rota: '/salas'
-        },
-        {
-            nome: "Projetos",
-            img: ProjectImage,
-            totalOnline: 0,
-            rota: '/salas'
-        }
-  ]
+  const [salas, setSalas] = useState([]);
+  const navigate = useNavigate();
+
+  const imagensPorNome = {
+    'Frontend': FrontEndImage,
+    'Backend': BackEndImage,
+    'Projetos': ProjectImage
+  };
+
+  useEffect(() => {
+    async function buscarSalas() {
+      try {
+        const res = await fetch('http://localhost:3001/salas');
+        const data = await res.json();
+        setSalas(data);
+      } catch (error) {
+        console.error('Erro ao buscar salas:', error);
+      }
+    }
+
+    buscarSalas();
+  }, []);
 
   function dashboardLogout(){
-    window.location.href = '/login'
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    navigate('/login')
   }
 
     return (
@@ -41,17 +46,22 @@ export default function Dashboard(){
             <img src={LogoSemFundo} alt="" />
           </Link>
           <h1>Salas Disponíveis</h1>
-          <a onClick={dashboardLogout}> <LogOut /></a>
+          <div className="dropdown">
+            <a onClick={dashboardLogout}><LogOut /></a>
+            <div className="dropdown-content">
+              <p>Logout</p>
+            </div>
+          </div>
         </header>
 
         <div className="dashboard-container">
           {salas.map(sala => (
               <DashboardCard 
                 key={sala.id}
-                nome={sala.nome}
-                img={sala.img}
-                totalOnline={sala.totalOnline}
-                rota={sala.rota}
+                nome={sala.name}
+                img={imagensPorNome[sala.name] || ProjectImage}
+                totalOnline={0} // mockado temporariamente 
+                rota={`/salas/${sala.id}`}
               />
           ))}
         </div>

@@ -1,10 +1,11 @@
 import '../styles/Cadastro.css'
 import LogoSemFundo from '../assets/logo-sem-fundo.png'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Cadastro() {
-  const [errorMessage, setErrorMessage] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
+  const navigate = useNavigate()
 
   // Alterna o tipo do input entre password e text
   const [typeSenha, setSenha] = useState(false)
@@ -38,7 +39,7 @@ export default function Cadastro() {
   } 
   
   // Cadastro
-  function cadastrar() {
+  async function cadastrar() {
     const nome = document.getElementById("nome").value
     const dataNascimento = document.getElementById("data-nascimento").value
     const cpf = document.getElementById("cpf").value
@@ -46,13 +47,36 @@ export default function Cadastro() {
     const senha = document.getElementById("password").value
 
     if (!nome || !dataNascimento || !cpf || !email || !senha) {
-        // alert('Por favor, preencha todos os campos.')
-        setErrorMessage(true)
+        setErrorMessage('Por favor, preencha todos os campos.')
+        return
     }
-    else if(nome && dataNascimento && cpf && email && senha){
-      alert('Conta criada com sucesso!')
-      window.location.href = '/login'
-  }}
+    try {
+      const res = await fetch('http://localhost:3001/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: nome,
+          email: email,
+          password: senha
+        })
+      })
+      const result = await res.json()
+
+      if (!res.ok) {
+        setErrorMessage(result.message || 'Erro ao cadastrar')
+        return
+      }
+
+      localStorage.setItem('token', result.token)
+      localStorage.setItem('user', JSON.stringify(result.user))
+
+      navigate('/login')
+    }
+    catch (err) {
+      console.error(err)
+      setErrorMessage('Erro ao conectar com o servidor.')
+    }
+  }
 
   return (
     <div className="cadastro-body" onLoad={DataMax}>
@@ -132,13 +156,11 @@ export default function Cadastro() {
           </div>
           <button type="button" onClick={cadastrar}>Criar conta</button>
         </form>
-        {errorMessage && 
-        <p className='cadastro-input-error'>
-          Por favor preencha todos os campos.
-        </p>}
+        {errorMessage && <p className='cadastro-input-error'>{errorMessage}</p>}
       </div>
+
       <div className="cadastro-possui-conta">
-        <p>Já tem uma conta? <a href="/login">Fazer login</a></p>
+        <p>Já tem uma conta? <Link to="/login">Fazer login</Link></p>
       </div>
     </div>
   )
